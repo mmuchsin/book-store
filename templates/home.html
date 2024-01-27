@@ -4,4 +4,12 @@
 
 {% block content %}
 <h1>Ucup Home Page</h1>
+    {% if user.is_authenticated %}
+        <p>Hi {{ user.username }}</p>
+        <a href="{% url 'logout' %}">log out</a>
+    {% else %}
+        <p>You're not logged in</p>
+        <a href="{% url 'login' %}">log in</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
 {% endblock content %}
