@@ -24,15 +24,15 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About Us</a>
                     </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Log Out</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Log In</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Log Out</a>
                     </li>
                     {% endif %}
                 </ul>
