@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load socialaccount %}
+
 
 
 {% block title %} Login Page {% endblock title %}
@@ -11,4 +13,8 @@
         {{ form|crispy }}
         <button type="submit" class="btn btn-primary">log in</button>
     </form>
+    <p>Or sign in with:</p>
+    <a href="{% provider_login_url 'google' method='oauth2' %}">
+        <img src="path_to_google_icon" alt="Sign in with Google"/>
+    </a>
 {% endblock content %}
